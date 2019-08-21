@@ -34,6 +34,7 @@ function startRecognition(){
         showPopup: true,
         showPartial: true
     });
+    
 }
 
 // Verify if recognition is available
@@ -58,14 +59,24 @@ window.plugins.speechRecognition.isRecognitionAvailable(function(available){
     }, function(err){
         console.log(err);
     });
+    
 }, function(err){
     console.log(err);
 });
+
+
+window.plugins.speechRecognition.getSupportedLanguages(function(data){
+    console.log(data); // ["es-ES","de-DE","id-ID" ........ ]
+}, function(err){
+    console.error(err);
+});
+window.plugins.speechRecognition.stopListening(function(){
+    // No more recognition
+}, function(err){
+    console.log(err);
+});
+
 }
-
-
-
-
 // function playVibrate() {
 //     var u = new SpeechSynthesisUtterance();
 //     var x = document.getElementById("display");
