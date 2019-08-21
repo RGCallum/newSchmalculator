@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <title>Schmalculator</title>
+        <link rel="stylesheet" href="main.css">
+        <link rel="icon" href="./calFavicon.png" type="image/x-icon">
+        <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+        <script src="artyom.window.min.js"></script>
+
+        </head>
+    <body>
+            <h2>Schmalculator</h2>
+            <div class="calbody">
+        <form>
+           
+    <input type="text" id = "display" placeholder="0">
+    
+    <div class="bstyle">
+    
+    <button type="button" value = "reset" id = "c" onClick= "form.reset()">C</button>
+    <!-- <button type="button" value="%" id = "moduloo" onClick="input(value)">%</button> -->
+    <!-- <button type="button" value= "avg" id = "b" onclick = "startRecognition()" >🗣</button> -->
+    <button type="button" value= "avg" id = "b" >🗣 </button>
+    <button type="button" value="%" id = "modulo" onClick="input(value)">%</button>
+    <button type="button" value="+" id = "plus" onClick="input(value)">+</button>
+    <button type="button" value="7" onClick="input(value)">7</button>
+    <button type="button" value="8" onClick="input(value)">8</button>
+    <button type="button" value="9" onClick="input(value)">9</button>
+    <button type="button" value="-" id = "minus" onClick="input(value)">-</button>
+    
+    <button type="button" value="4" onClick="input(value)">4</button>
+    <button type="button" value="5" onClick="input(value)">5</button>
+    <button type="button" value="6" onClick="input(value)">6</button>
+    <button type="button" value="*" id = "multiply" onClick="input(value)">*</button>
+    <button type="button" value="1" onClick="input(value)">1</button>
+    <button type="button" value="2" onClick="input(value)">2</button>
+    <button type="button" value="3" onClick="input(value)">3</button>
+    <button type="button" value="/" id = "divide" onClick="input(value)">/</button>
+    
+    <button type="button" value="0" onClick="input(value)">0</button>
+    <button type="button" value ="." id = "period" onclick="input(value)">.</button>
+    <button type="button" id = "eq" onClick="result()">=</button>
+    </div>
+    
+        </form>
+
+    </div>
+    <script src="app.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+    </body>
+</html>
