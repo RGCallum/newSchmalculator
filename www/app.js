@@ -19,11 +19,11 @@ mic.onclick = () => {
 
 // Handle results
 function startRecognition(){
-    window.plugins.speechRecognition.startListening(function(input){
+    window.plugins.speechRecognition.startListening(function(result){
         // Show results in the console
-        console.log(input);
-        // document.getElementById("display").value+=x;
-        // document.getElementById("display").value = eval(x);
+        console.log(result);
+        document.getElementById("display").value+=x;
+        document.getElementById("display").value = eval(x);
 
 
     }, function(err){
@@ -32,7 +32,7 @@ function startRecognition(){
         language: "en-US",
         prompt: "Whats up?",
         showPopup: true,
-        showPartial: true
+        showPartial: false
         
     });
     
@@ -71,10 +71,7 @@ window.plugins.speechRecognition.getSupportedLanguages(function(data){
 }, function(err){
     console.error(err);
 });
-window.plugins.speechRecognition.stopListening(function(result){
-    console.log(result);
-        document.getElementById("display").value+=x;
-        document.getElementById("display").value = eval(x);
+window.plugins.speechRecognition.stopListening(function(){
     // No more recognition
 }, function(err){
     console.log(err);
