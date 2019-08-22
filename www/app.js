@@ -15,91 +15,70 @@ function result(){
 
 var mic = document.getElementById('b');
 mic.onclick = () => {
-    window.SpeechRecognition = window.webkitSpeechRecognition || window.SpeechRecognition;
-    let finalTranscript = '';
-    let recognition = new window.SpeechRecognition();
 
-    recognition.interimResults = true;
-    recognition.maxAlternatives = 10;
-    recognition.continuous = true;
-
-    recognition.onresult = (event) => {
-      let interimTranscript = '';
-      for (let i = event.resultIndex, len = event.results.length; i < len; i++) {
-        let transcript = event.results[i][0].transcript;
-        if (event.results[i].isFinal) {
-          finalTranscript += transcript;
-        } else {
-          interimTranscript += transcript;
-        }
-      }
-
-      document.querySelector('body').innerHTML = finalTranscript + '<i style="color:#ddd;">' + interimTranscript + '</>';
-    }
-    recognition.start();}
 // Handle results
-// function startRecognition(){
-//     window.plugins.speechRecognition.startListening(function(result){
-//         // Show results in the console
-//         console.log(result);
+function startRecognition(){
+    window.plugins.speechRecognition.startListening(function(result){
+        // Show results in the console
+        console.log(result);
 
-//         document.getElementById("display").value+=x;
-//         document.getElementById("display").value = eval(x);
+        document.getElementById("display").value+=x;
+        document.getElementById("display").value = eval(x);
        
 
 
-//     }, function(err){
-//         console.error(err);
-//     }, {
-//         language: "en-US",
-//         prompt: "Whats up?",
-//         showPopup: true,
-//         showPartial: true
+    }, function(err){
+        console.error(err);
+    }, {
+        language: "en-US",
+        prompt: "Whats up?",
+        showPopup: true,
+        showPartial: true
         
-//     });
+    });
     
-// }
+}
 
-// // Verify if recognition is available
-// window.plugins.speechRecognition.isRecognitionAvailable(function(available){
-//     if(!available){
-//         console.log("Sorry, not available");
-//     }
+// Verify if recognition is available
+window.plugins.speechRecognition.isRecognitionAvailable(function(available){
+    if(!available){
+        console.log("Sorry, not available");
+    }
 
-//     // Check if has permission to use the microphone
-//     window.plugins.speechRecognition.hasPermission(function (isGranted){
-//         if(isGranted){
-//             startRecognition();
-//         }else{
-//             // Request the permission
-//             window.plugins.speechRecognition.requestPermission(function (){
-//                 // Request accepted, start recognition
-//                 startRecognition();
-//             }, function (err){
-//                 console.log(err);
-//             });
-//         }
-//     }, function(err){
-//         console.log(err);
-//     });
+    // Check if has permission to use the microphone
+    window.plugins.speechRecognition.hasPermission(function (isGranted){
+        if(isGranted){
+            startRecognition();
+        }else{
+            // Request the permission
+            window.plugins.speechRecognition.requestPermission(function (){
+                // Request accepted, start recognition
+                startRecognition();
+            }, function (err){
+                console.log(err);
+            });
+        }
+    }, function(err){
+        console.log(err);
+    });
     
-// }, function(err){
-//     console.log(err);
-// });
+}, function(err){
+    console.log(err);
+});
 
 
-// window.plugins.speechRecognition.getSupportedLanguages(function(data){
-//     console.log(data); // ["es-ES","de-DE","id-ID" ........ ]
-// }, function(err){
-//     console.error(err);
-// });
-// window.plugins.speechRecognition.stopListening(function(){
-//     // No more recognition
-// }, function(err){
-//     console.log(err);
-// });
+window.plugins.speechRecognition.getSupportedLanguages(function(data){
+    console.log(data); // ["es-ES","de-DE","id-ID" ........ ]
+}, function(err){
+    console.error(err);
+});
+window.plugins.speechRecognition.stopListening(function(){
+    // No more recognition
+}, function(err){
+    console.log(err);
+});
 
-// }
+}
 // function playVibrate() {
 //     var u = new SpeechSynthesisUtterance();
 //     var x = document.getElementById("display");
