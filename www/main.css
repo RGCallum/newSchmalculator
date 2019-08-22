@@ -1,3 +1,9 @@
+@font-face {
+    font-family: 'Orbitron';
+    src: url('./css/OrbitronRegular.woff2') format('woff');
+    font-style: normal;
+    font-weight: 400;
+}
 html{
     background-color: rgb(0, 0, 0);
     background-image: linear-gradient(to bottom left, rgb(141, 141, 141), rgba(39, 103, 163, 0.281));
@@ -152,6 +158,5 @@ h1, h2, p{
         width: 27%;
         margin-left: -9px;
         border: inset rgb(248, 248, 248)10px;
-
 }
   }
