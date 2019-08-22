@@ -63,6 +63,9 @@ button:hover{
     animation: btn-animation .2s;
 
   }
+  button:focus {
+    outline: none;
+}
 
   #c, #period, #plus, #minus, #multiply, #divide, #modulo, #eq{
     background-color: rgb(0, 225, 255);
