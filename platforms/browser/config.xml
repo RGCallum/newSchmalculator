@@ -20,6 +20,6 @@
     <allow-intent href="geo:*" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="26" />
-    <icon src="./www/calFavicon.png" />
+    <!-- <icon src="./www/calFavicon.png" /> -->
 
 </widget>
