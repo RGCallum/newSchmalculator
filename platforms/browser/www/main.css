@@ -17,7 +17,7 @@ html{
     box-shadow: inset 2px 2px 2px rgb(2, 2, 2);
     border-radius: 20px;
     width: 35%;
-    height: 680px;
+    height: 700px;
     padding: 0px 125px;
     display: grid;
     justify-content: center;
@@ -36,7 +36,7 @@ form{
     justify-content: center;
     grid-template-columns: repeat(4, 78px);
     grid-template-rows: repeat(5, 90px);    
-    grid-gap: 15px;
+    grid-gap: 8px;
     
     
 
@@ -61,15 +61,25 @@ button{
 }
 
 button:hover{
-    border: 5px solid rgb(255, 255, 255);
-    box-shadow: inset 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+    border: 3px solid rgb(255, 255, 255);
+    box-shadow: 0px 1px 4px 0px rgb(0, 0, 0);
+    animation: btn-animation .2s;
+
   }
 
   #c, #period, #plus, #minus, #multiply, #divide, #modulo, #eq{
     background-color: rgb(0, 225, 255);
    
 }
+@Keyframes btn-animation{
+	0%{
+		transform: scale(0.9);
+	}
 
+	100%{
+		transform: scale(1);
+	}
+}
 
 #c, #eq{
     background-color: #32D96C;
@@ -82,7 +92,7 @@ button:hover{
 }
 
 #eq{
-    width: 213%;
+    width: 205%;
     margin-left: 0%;
 }
 
@@ -90,25 +100,27 @@ button:hover{
 #display{
     background-color: rgb(189, 224, 189);
     border: thick, black;
-    border-radius: 20px;
-    height: 90px;
-    width: 370px;
+    border-radius: 15px;
+    height: 60px;
+    width: 360px;
     text-align: right;
+    margin-top: -30px;
     margin-bottom: 30px;
     margin-left: -2%;
     font-size: 300%;
     font-family: 'Orbitron', sans-serif;
     color: black;
-
+z-index: -10;
 }
 
-h1, h2{
-    font-size: 300%;
+h1, h2, p{
+    font-size: 40px;
     font-family: 'Orbitron', sans-serif;
+    font-weight: 600;
     color: rgb(248, 248, 248);
     text-shadow: 1px 1px 1px black;
     text-align: center;
-    
+    margin-top: -10px;
 }
 
 /* #display:hover{
