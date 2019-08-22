@@ -29,5 +29,5 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
-        <icon src="./www/calFavicon.png" />
+        <!-- <icon src="./www/calFavicon.png" /> -->
 </widget>
