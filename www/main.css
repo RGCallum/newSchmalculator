@@ -139,17 +139,19 @@ h1, h2, p{
         background-size: contain;
         margin-left: -14px;
         border: inset rgb(248, 248, 248)8px;
-
 }
-    .bstyle{
-
-         
+    .bstyle{   
         grid-gap: initial;
- 
-        
-    
     }
     #eq{
         width: 185%;
     }
+  }
+  @media only screen and (min-width: 360px) and (max-width: 400px){
+    .calbody{
+        width: 27%;
+        margin-left: -9px;
+        border: inset rgb(248, 248, 248)10px;
+
+}
   }
