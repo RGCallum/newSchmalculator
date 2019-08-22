@@ -40,18 +40,18 @@ function startRecognition(){
 }
 
 // Verify if recognition is available
-window.plugins.speechRecognition.isRecognitionAvailable(function(available){
+plugins.speechRecognition.isRecognitionAvailable(function(available){
     if(!available){
         console.log("Sorry, not available");
     }
 
     // Check if has permission to use the microphone
-    window.plugins.speechRecognition.hasPermission(function (isGranted){
+    plugins.speechRecognition.hasPermission(function (isGranted){
         if(isGranted){
             startRecognition();
         }else{
             // Request the permission
-            window.plugins.speechRecognition.requestPermission(function (){
+            plugins.speechRecognition.requestPermission(function (){
                 // Request accepted, start recognition
                 startRecognition();
             }, function (err){
@@ -67,12 +67,12 @@ window.plugins.speechRecognition.isRecognitionAvailable(function(available){
 });
 
 
-window.plugins.speechRecognition.getSupportedLanguages(function(data){
+plugins.speechRecognition.getSupportedLanguages(function(data){
     console.log(data); // ["es-ES","de-DE","id-ID" ........ ]
 }, function(err){
     console.error(err);
 });
-window.plugins.speechRecognition.stopListening(function(){
+plugins.speechRecognition.stopListening(function(){
     // No more recognition
 }, function(err){
     console.log(err);
