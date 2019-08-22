@@ -15,65 +15,29 @@ function result(){
 
 var mic = document.getElementById('b');
 mic.onclick = () => {
+
+// Handle results
+function startRecognition(){
+    window.plugins.speechRecognition.startListening(function(result){
+        // Show results in the console
+        console.log(result);
+
+        document.getElementById("display").value+=x;
+        document.getElementById("display").value = eval(x);
+       
+
+
+    }, function(err){
+        console.error(err);
+    }, {
+        language: "en-US",
+        prompt: "Whats up?",
+        showPopup: true,
+        showPartial: true
+        
+    });
     
-        mic.classList.add("record");
-        var recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition || window.mozSpeechRecognition || window.msSpeechRecognition)();
-        recognition.lang = 'en-US';
-        recognition.start();
-        operations = {"plus":"+",
-                     "minus":"-",
-                     "multiply":"*",
-                     "multiplied":"*",
-                     "times":"*",
-                     "divide":"/",
-                     "divided":"/",
-                     "reminder":"%"};
-                     
-        
-        recognition.onresult = function(event){
-            var input = event.results[0][0].transcript;
-            for(property in operations){
-                input= input.replace(property, operations[property]);
-            }
-            document.getElementById("display").value = display;
-            setTimeout(function(){
-                evaluate(display);
-            },2000);
-            mic.classList.remove("record");
-        }
-        
-    }
-    function evaluate(display){
-        try{
-            var result = eval(display);
-            document.getElementById("display").value = result;
-        }
-        catch(e){
-            console.log(e);
-            document.getElementById("display").value = "";
-        }
-    }
-
-// // Handle results
-// function startRecognition(){
-//     window.plugins.speechRecognition.startListening(function(result){
-//         // Show results in the console
-//         console.log(result);
-//         document.getElementById("display").value+=x;
-//         // document.getElementById("display").value = eval(x);
-
-
-//     }, function(err){
-//         console.error(err);
-//     }, {
-//         language: "en-US",
-//         prompt: "Whats up?",
-//         showPopup: false,
-//         showPartial: false
-        
-//     });
-    
-// }
+}
 
 // Verify if recognition is available
 window.plugins.speechRecognition.isRecognitionAvailable(function(available){
@@ -114,7 +78,7 @@ window.plugins.speechRecognition.stopListening(function(){
     console.log(err);
 });
 
-
+}
 // function playVibrate() {
 //     var u = new SpeechSynthesisUtterance();
 //     var x = document.getElementById("display");
