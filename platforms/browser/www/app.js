@@ -72,6 +72,8 @@ window.plugins.speechRecognition.getSupportedLanguages(function(data){
 }, function(err){
     console.error(err);
 });
+
+
 window.plugins.speechRecognition.stopListening(function(){
     // No more recognition
 }, function(err){

@@ -1,3 +1,9 @@
+@font-face {
+    font-family: 'Orbitron';
+    src: url('./css/OrbitronRegular.woff2') format('woff');
+    font-style: normal;
+    font-weight: 400;
+}
 html{
     background-color: rgb(0, 0, 0);
     background-image: linear-gradient(to bottom left, rgb(141, 141, 141), rgba(39, 103, 163, 0.281));
@@ -10,11 +16,12 @@ html{
     background-color: rgb(31, 30, 31);
     background-image: linear-gradient(to bottom right, rgb(141, 141, 141), black);
     background-size: cover;
+    background-attachment: fixed;
     border: inset rgb(248, 248, 248)13px;
     box-shadow: inset 2px 2px 2px rgb(2, 2, 2);
     border-radius: 20px;
-    width: 35%;
-    height: 700px;
+    /* width: 35%; */
+    /* height: 700px; */
     padding: 0px 125px;
     display: grid;
     justify-content: center;
@@ -102,7 +109,7 @@ button:hover{
     border: thick, black;
     border-radius: 15px;
     height: 60px;
-    width: 360px;
+    width: 85vw;
     text-align: right;
     margin-top: -30px;
     margin-bottom: 30px;
@@ -114,7 +121,7 @@ z-index: -10;
 }
 
 h1, h2, p{
-    font-size: 40px;
+    font-size: 10vw;
     font-family: 'Orbitron', sans-serif;
     font-weight: 600;
     color: rgb(248, 248, 248);
@@ -127,3 +134,29 @@ h1, h2, p{
     border: 5px solid rgb(255, 255, 255);
     box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.2);
   } */
+  @media only screen and (max-width: 359px){
+    button{
+        width: 20vw;
+        height: 7vh;
+        font-size: 10vw;
+    }
+.calbody{
+        width: 20%;
+        background-size: contain;
+        margin-left: -14px;
+        border: inset rgb(248, 248, 248)8px;
+}
+    .bstyle{   
+        grid-gap: initial;
+    }
+    #eq{
+        width: 185%;
+    }
+  }
+  @media only screen and (min-width: 360px) and (max-width: 400px){
+    .calbody{
+        width: 27%;
+        margin-left: -9px;
+        border: inset rgb(248, 248, 248)10px;
+}
+  }
